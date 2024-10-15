@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/Styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <script src="js/vega_lite_vis.js"></script>
+
+</head>
+<body>
+    <header>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: italic;">Australia's Telecom Sectors</h2>
+      </header>
+
+<section id="gallery-1716">
+    <div class="cs-container">
+        <div class="cs-content">
+          <h2 class="cs-title" style="font-family: sans-serif; font-weight: bold;">Building Tomorrow's Connectivity</h2>
+            <!--If you remove the cs-text, the rectangle shape will disappear.  If you need to remove it, transfer the :before and .cs-text:last-of-type styles to the cs-title on mobile and desktop-->
+            <p class="cs-text" style="font-family: sans-serif;">
+              Stay informed on how government policies and funding are shaping the future of communications.
+            </p>
+            <a href="" class="cs-button-solid">View All</a>
+        </div>
+        <div class="cs-gallery">
+          <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)"
+                    srcset="Images/Image4.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)"
+                    srcset="Images/Image4.webp">
+            <img loading="lazy" decoding="async"
+                    src="Images/Image4.webp" alt="picture"
+                    width="480" height="549">
+        </picture>
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)"
+                    srcset="Images/Image3.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)"
+                    srcset="Images/Image3.webp">
+            <img loading="lazy" decoding="async"
+                    src="Images/Image3.webp" alt="picture"
+                    width="480" height="549">
+        </picture>
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)"
+                    srcset="Images/Image2.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)"
+                    srcset="Images/Image2.webp">
+            <img loading="lazy" decoding="async"
+                    src="Images/Image2.webp" alt="picture"
+                    width="480" height="549">
+        </picture>
+        </div>
+    </div>
+</section>
+  
+
+
+  <!-- <div class="dheading2">
+    <p>Australia's telecommunications industry plays a crucial role in connecting millions of individuals and businesses across the country, ensuring seamless communication and internet access. It is dominated by key players such as Telstra, Optus, and Vodafone, who provide a wide range of services, including mobile, broadband, and fixed-line communications.
+
+      Over the past decade, the sector has seen significant growth, driven by rapid technological advancements, including the rollout of 4G and 5G networks, 
+      as well as the expansion of high-speed broadband through the National Broadband Network (NBN). The industry's transition from traditional fixed-line services to more advanced, digital-based infrastructure reflects the increasing demand for faster and more reliable internet services.</p>
+    </div> -->
+    <div class="text-container">
+      <div class="left-section">
+        <p>
+          <span class="styled-text4">Australia's telecommunications industry</span> plays a crucial role in connecting millions of individuals and businesses across the country, ensuring seamless communication and internet access. It is dominated by key players such as Telstra, Optus, and Vodafone, who provide a wide range of services, including mobile, broadband, and fixed-line communications.
+        </p>
+      </div>
+      <div class="right-section">
+        <p>
+          <span class="styled-text5">Over the past decade,</span> the sector has seen significant growth, driven by rapid technological advancements, including the rollout of <b>4G</b> and <b>5G</b> networks, as well as the expansion of high-speed broadband through the <b>National Broadband Network (NBN).</b> The industry's transition from traditional fixed-line services to more advanced, digital-based infrastructure reflects the increasing demand for faster and more reliable internet services.
+        </p>
+      </div>
+    </div>
+   
+  
+      <div class="payment-container">
+
+        <div class="dheading">
+          <h2 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Customer Payment Methods and Gender Preferences in the Australian Telecommunications Industry</h2>
+  
+          </div>
+  
+      
+      <div class="payment-container2">
+
+      
+          <div class= "piechart1">
+            <h2 style="font-family: sans-serif; font-weight: bold; font-size: 20px;">Payment method of the customers</h2>
+            <div id="pie_chart"></div>
+            <div class="piechart-description">
+            <p style="font-family: sans-serif;"><span class="styled-text3">In the Australian telecommunication industry,</span> several convenient payment methods are commonly used. These include <span class="bank-transfer">bank transfers</span>, allowing customers to directly transfer funds from their accounts, and <span class="credit-card">credit card</span> payments, which offer flexibility and quick processing. <span class="electronic-check">Electronic checks</span> provide a secure, paperless alternative to traditional checks, while <span class="mailed-check">mailed checks</span> may be used for specific health-related services requiring verification or invoicing through medical entities.</p>
+          </div>
+          </div>
+      
+      
+      
+            
+            <div class= "barchart1">
+              <h2 style="font-family: sans-serif; font-weight: bold; font-size: 20px;">Payment method according to gender</h2>
+              <div id="simple_bar_chart"></div>
+              <div class="bar-chart-description">
+              <p style="font-family: sans-serif;">This indicates a growing trend towards digital, paperless transactions in the telecom industry. In addition to <span class="electronic-check">electronic checks</span>, other widely-used electronic payment methods include <span class="mobile-banking">mobile banking apps</span>, <span class="online-portals">online payment portals</span>, and <span class="digital-wallets">digital wallets like PayPal</span>. These options provide customers with secure, fast, and convenient ways to manage their telecom payments, highlighting the increasing shift towards electronic solutions in the Australian telecommunications sector.</p> 
+            </div>
+            </div>
+          
+      </div>
+    </div>    
+ 
+  
+
+    <div class="container">
+        <!-- Chart Section -->
+         <div class="dheading1">
+        <h2 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Telecommunication Complaints: Customer, Service Provider, and Business Perspectives</h2>
+        </div>
+        <div class="chart-section">
+            
+            <div id="line_chart">
+                <!-- Chart will be rendered here -->
+            </div>
+            <div class="chart-description">
+            <p  style="font-family: sans-serif;"><span class="styled-text2">Complaints within the telecommunication industry </span> often arise due to differences between various communication modes, such as  <span style="color: #1F77B4;">Internet,</span>  <span style="color: #bf3131;">mobile,</span>  <span style="color: #a31fb4;">broadband</span> and  <span style="color: #d98912;">landline services.</span> Mobile users frequently report issues with dropped calls, weak signal coverage, and excessive data charges. Broadband customers may face complaints regarding slow internet speeds, frequent service disruptions, or difficulty in upgrading to faster plans. Landline services, though less common now, can still be subject to problems like faulty connections or high call rates for long-distance communication. These varying modes of communication each have distinct challenges, leading to a range of customer grievances depending on the specific service being used.</p>
+            </div>
+        </div>
+      </div>
+       
+    
+  <div class="container2">
+
+
+    <div class="chart-section2">
+        
+        <div class="chart-description2">
+        <p style="font-family: sans-serif;"><span class="styled-text">Telecommunications services play a critical role, </span> in modern society facilitating everything from personal communication to business operations. However, with the growing complexity of services, such as mobile networks, broadband, and fixed-line connections, various challenges can emerge, leading to customer dissatisfaction.
+
+          Key factors that often influence complaints include <span style="color: #1F77B4;">service distruptions,</span> <span style="color: #b41f4c;">delayed responses from providers,</span> <span style="color: #7b2d97;">billing issues,</span> and <span style="color: #eb6f03;">challanges with installation and cancellation.</span> These issues can have wide-ranging impacts, not only on consumers’ day-to-day lives but also on businesses that rely on stable and efficient communication networks. Telecommunication providers constantly work towards improving service quality, reducing downtime, and responding promptly to customer needs.
+          
+          Understanding complaint trends allows companies to target critical areas for improvement, ensuring customer retention and enhancing the overall reliability of their services. Government regulators and consumer advocacy groups also track such metrics to enforce industry standards and protect consumer rights in the ever-evolving digital and telecommunications landscape.</p>
+    </div>
+    <div class="cust1">
+    <div id="vertical_bar_chart"></div>
+    </div>
+    </div>
+
+    </div>
+
+
+    <div class="container3">
+    
+      <div class="chart-section3">
+          
+          <div id="stacked_bar_chart">  
+              <!-- Chart will be rendered here -->
+          </div>
+          <div class="chart-description3">
+          <p style="font-family: sans-serif;"><span class="styled-text2">Complaints within the telecommunication industry</span> often arise due to differences between various communication modes, such as mobile, broadband, and landline services. Mobile users frequently report issues with dropped calls, weak signal coverage, and excessive data charges. Broadband customers may face complaints regarding slow internet speeds, frequent service disruptions, or difficulty in upgrading to faster plans. Landline services, though less common now, can still be subject to problems like faulty connections or high call rates for long-distance communication. These varying modes of communication each have distinct challenges, leading to a range of customer grievances depending on the specific service being used..</p>
+          </div>
+      </div>
+    </div>
+    
+   
+
+
+
+
+
+    <div class="container4" > 
+
+      <div class="dheading">
+        <h2 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Trends in Customer Spending and Revenue Changes in the Telecommunications Market (2016-2025)</h2>
+        </div>
+        <div class="container5">
+         
+          <div class="avespendchart">
+              <!-- <h2 style="font-family: sans-serif;" >Average Spend Per Capita</h2> -->
+              <div id="Ave_spend_line"></div>
+            </div>
+          
+          <div class="revenuemarket">
+            <!-- <h2 style="font-family: sans-serif;">Revenue Change By Market</h2> -->
+            <div id="revenue_change_line" ></div>
+          </div>
+        
+        </div>    
+      
+      </div>  
+       
+    <div class="donutcharts">
+
+
+      <div class="dheading">
+        <h2 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Social and Economic Benefits of the NBN Network: Impact on Employment, Education, Health, and Community in FY23</h2>
+
+        </div>
+
+      
+        <div class="nbncontainer">
+  
+         
+             
+              <div class= "donutchart1_class">
+                <div id="donutchart1"></div>
+                <p> 77%of NBN Co users who worked from 
+                    home or used job search platforms 
+                    reported the nbn® network positively 
+                    impacted their employment outcomes 
+                    in FY23</p>
+              </div>
+              
+            
+          
+            
+                
+                <div class= "donutchart2_class">
+                  <div id="donutchart2"></div>
+                  <p> 82% of NBN Co users who engaged in formal 
+                    or informal education from home via 
+                    the nbn® network reported the nbn®
+                    network positively impacted their 
+                    education outcomes in FY23.</p>
+                </div>
+                
+              </div>
+          
+    
+     
+
+
+            <div class="nbncontainer2">
+      
+                  
+                  <div class= "donutchart1_class">
+                    <div id="donutchart3"></div>
+                    <p> 77%of NBN Co users who worked from 
+                        home or used job search platforms 
+                        reported the nbn® network positively 
+                        impacted their employment outcomes 
+                        in FY23</p>
+                  </div>
+                  
+              
+           
+                   
+                    <div class= "donutchart2_class">
+                      <div id="donutchart4"></div>
+                      <p> 74%of NBN Co users who worked from 
+                          home or used job search platforms 
+                          reported the nbn® network positively 
+                          impacted their employment outcomes 
+                          in FY23</p>
+                    </div>
+         
+              
+            </div>   
+            
+        </div>
+           
+
+       <div class="Netlin"> 
+
+        <div class="dheading">
+          <h2 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Evolution of 3G, 4G, and 5G Network Coverage in Australia (2016-2028)</h2>
+  
+          </div>
+            <div class="netlin-class">
+            <div id="Netlinechart"></div>
+
+             <div class="netpar">
+
+              <p style="font-family: sans-serif;"><span class="styled-text">Network coverage</span> refers to the geographic area where a telecommunications provider offers its services, enabling users to connect to mobile networks (e.g., 3G, 4G, 5G) for voice calls, text messaging, and internet access. Coverage is typically provided through a network of cellular towers, antennas, and other infrastructure that transmit and receive signals.Expanding network coverage is a key goal for telecom providers and governments, ensuring that even remote and rural areas have access to modern communication technologies, promoting digital inclusion and economic development.</p>
+              </div>
+            </div>
+
+        </div>    
+
+        <div class="map"> 
+              <div class="map-class">
+                <div id="complaints_map"></div>
+
+              </div>
+  
+          </div>    
+        
+</body>
+
+<footer class="footer">
+  <p>&copy; 2024 Your Company. All rights reserved.</p>
+</footer>
+
+</html>

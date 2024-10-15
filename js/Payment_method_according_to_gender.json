@@ -1,0 +1,69 @@
+{
+  "hconcat": [
+    {
+      "title": "Female Customers by Payment Method",
+      "data": {
+        "url": "../data/payment_method_of_the_customers.csv"
+      },
+      "width": 130,
+      "height": 250,
+      "spacing": 5,
+      "mark": {"type": "bar", "tooltip": true},
+      "encoding": {
+        "x": {
+          "field": "Payment Method",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Female",
+          "type": "quantitative",
+          "title": "No of Female"
+        },
+        "color": {
+          "field": "Payment Method",
+          "type": "nominal",
+          "scale": {
+            "scheme": "purplebluegreen"
+          },
+          "title": "Payment Method"
+        },
+        "tooltip": [
+          {"field": "Female", "type": "quantitative", "format": ","},
+          {"field": "Payment Method", "type": "nominal", "title": "Payment Method"}
+        ]
+      }
+    },
+    {
+      "title": "Male Customers by Payment Method",
+      "data": {
+        "url": "../data/payment_method_of_the_customers.csv"
+      },
+      "width": 130,
+      "height": 250,
+      "mark": {"type": "bar", "tooltip": true},
+      "encoding": {
+        "x": {
+          "field": "Payment Method",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Male",
+          "type": "quantitative",
+          "title": "No of Male"
+        },
+        "color": {
+          "field": "Payment Method",
+          "type": "nominal",
+          "scale": {
+            "scheme": "purplebluegreen"
+          },
+          "title": "Payment Method"
+        },
+        "tooltip": [
+          {"field": "Male", "type": "quantitative", "format": ","},
+          {"field": "Payment Method", "type": "nominal", "title": "Payment Method"}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,872 @@
+/* Style the header */
+header {
+  background-color: #7bb6c3;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(4, 4, 4);
+}
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-1716 {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  #gallery-1716 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    top: 30px;
+  }
+  #gallery-1716 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #gallery-1716 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #gallery-1716 .cs-text:last-of-type {
+    /* 32px - 64px */
+    margin-bottom: clamp(2rem, 7vw, 4rem);
+  }
+  #gallery-1716 .cs-text:last-of-type:before {
+    /* colored overlay rectangle - positioned absolute to the section tag because it is the nearest parent with a decalred position relative */
+    content: '';
+    width: 100%;
+    height: 80%;
+    background: var(--primary);
+    opacity: .1;
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #gallery-1716 .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #ffffff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #gallery-1716 .cs-button-solid:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width .3s;
+  }
+  #gallery-1716 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #gallery-1716 .cs-gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* sends it to the top in the 1st position */
+    order: -1;
+  }
+  #gallery-1716 .cs-picture {
+    width: 100%;
+    /* changes at tablet */
+    height: 100vw;
+    max-height: 25rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+    grid-column: span 4;
+  }
+  #gallery-1716 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #gallery-1716 .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  #gallery-1716 .cs-content {
+    max-width: 19rem;
+    /* 32px - 64px, ensures theres always a gap at the bottom to space out the content from the bottom of the container and let the colored rectangle shape be a little bigger and take up more space */
+    padding-bottom: clamp(2rem, 7vw, 4rem);
+  }
+  #gallery-1716 .cs-text:last-of-type {
+    /* add position relative so the colored rectangle is now absolutely positioned to the cs-text parent. We also only want these styles on the last paragraph tag */
+    position: relative;
+    z-index: 1;
+  }
+  #gallery-1716 .cs-text:last-of-type:before {
+    width: 250vw;
+    height: 100vw;
+    top: calc(100% + 1.8rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #gallery-1716 .cs-gallery {
+    height: auto;
+  }
+  #gallery-1716 .cs-picture {
+    height: 100%;
+    max-height: 100%;
+    /* 280px - 420px */
+    min-height: clamp(17.5rem, 37vw, 26.25rem);
+  }
+}
+:root {
+  /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+  --primary: #ff6a3e;
+  --primaryLight: #ffba43;
+  --secondary: #ffba43;
+  --secondaryLight: #ffba43;
+  --headerColor: #1a1a1a;
+  --bodyTextColor: #ffffff;
+  --bodyTextColorWhite: #fffcfc;
+  /* 13px - 16px */
+  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  /* 31px - 49px */
+  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+  --bodyFontSize: 1rem;
+  /* 60px - 100px top and bottom */
+  --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color:rgb(248, 251, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+*, *:before, *:after {
+  /* prevents padding from affecting height and width */
+  box-sizing: border-box;
+}
+.cs-topper {
+  font-size: var(--topperFontSize);
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: inherit;
+  letter-spacing: .1em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.cs-title {
+  font-size: var(--headerFontSize);
+  font-weight: 900;
+  line-height: 1.2em;
+  text-align: inherit;
+  max-width: 43.75rem;
+  margin: 0 0 1rem 0;
+  color: var(--headerColor);
+  position: relative;
+}
+
+.cs-text {
+  font-size: var(--bodyFontSize);
+  line-height: 1.5em;
+  text-align: inherit;
+  width: 100%;
+  max-width: 40.625rem;
+  margin: 0;
+  color: var(--bodyTextColor);
+}
+               
+article {
+  float: right;
+  padding: 20px;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+.linechart{
+  
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: 300px; /* only for demonstration, should be removed */
+
+}
+
+
+.payment-container {
+  position: relative;
+  display: flex;
+  width: 94%;
+  left: 3%;
+  height: auto; /* Allow height to adjust based on content */
+  top: 40px;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.payment-container2 {
+  position: relative;
+  display: flex;
+  flex-direction: row; /* Ensure the charts are in a row */
+  justify-content: space-between; /* Distribute space between the charts */
+  flex-wrap: nowrap; /* Prevent wrapping unless necessary */
+  background-color: #ffffff;
+  margin-top: 20px;
+  width: 98%;
+  left: 1%;
+  text-align: justify;
+}
+.piechart1  {
+  width: 40%; /* Ensure the charts take up almost half the width each */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: auto; /* Allow height to adjust based on content */
+  text-align: justify;
+}
+
+
+.barchart1 {
+  width: 50%; /* Ensure the charts take up almost half the width each */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: auto; /* Allow height to adjust based on content */
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .piechart1, .barchart1 {
+    flex: 1 1 100%; /* Stack the charts vertically on smaller screens */
+    width: 100%; /* Take full width in mobile view */
+  }
+}
+
+
+.container {
+  font-family: Verdana;
+  display: flex;
+  width: 94%;
+  left: 3%;
+  top: 35px;
+  position: relative;
+  padding: 20px;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+.centered-heading {
+  text-align: center;
+}
+
+.chart-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Ensure chart and description are aligned */
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+#line_chart {
+  width: 58%; /* Take up more space for the chart */
+  padding-right: 20px; /* Add some space between chart and description */
+}
+
+.chart-description {
+  width: 30%; /* Adjust width to match layout */
+  line-height: 1.6;
+  font-family: serif;
+  background-color: #ffffff;
+  padding-left: 20px; /* Add padding for better alignment */
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-section {
+    flex-direction: column; /* Stack the chart and description on smaller screens */
+  }
+
+  #line_chart, .chart-description {
+    width: 100%; /* Full width for both elements */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .chart-description {
+    margin-top: 20px; /* Add space between chart and description */
+  }
+}
+
+
+
+
+.container2 {
+  display: flex;
+  width: 94%;
+  left: 3%;
+  top: 20px;
+  position: relative;
+  padding: 20px;
+  flex-direction: column;
+  background-color: #ffffff;
+
+  height: auto; /* Adjust height based on content */
+}
+
+.chart-section2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Ensure space between charts and description */
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto; /* Adjust height based on content */
+  margin-top: 20px;
+  left: 1%;
+}
+
+.chart-description2 {
+  position: relative;
+  width: 45%; /* Adjust width to balance with the chart */
+  align-content: flex-start;
+  line-height: 1.6;
+  font-family: serif;
+  background-color: #ffffff;
+  padding: 10px;
+  height: auto; /* Let height adjust based on content */
+  text-align: justify;
+  top: 50px;
+}
+
+.cust1 {
+  display: flex;
+  width: 45%; /* Adjust width to balance with the description */
+  background-color: #ffffff;
+  height: auto; /* Let height adjust based on content */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-section2 {
+    flex-direction: column; /* Stack chart and description on smaller screens */
+  }
+
+  .chart-description2, .cust1 {
+    width: 100%; /* Full width for both elements on smaller screens */
+    margin-top: 20px; /* Add spacing between stacked elements */
+  }
+}
+
+
+
+.container3 {
+  display: flex;
+  width: 94%;
+  margin-left: 3%;
+  margin-top: 5px;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto; /* Let height adjust based on content */
+  padding-bottom: 30px;
+}
+
+.chart-section3 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Ensure spacing between chart and description */
+  width: 98%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  height: auto; /* Let height adjust based on content */
+  left: 1%;
+}
+
+#stacked_bar_chart {
+  width: 55%; /* Adjust chart width */
+  background-color: #ffffff;
+  padding-right: 20px;
+}
+
+.chart-description3 {
+  width: 40%; /* Adjust width to balance with chart */
+  line-height: 1.6;
+  font-family: serif;
+  background-color: #ffffff;
+  padding-left: 20px;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chart-section3 {
+    flex-direction: column; /* Stack chart and description on smaller screens */
+  }
+
+  #stacked_bar_chart, .chart-description3 {
+    width: 100%; /* Full width for both elements */
+    margin-top: 20px; /* Add spacing between stacked elements */
+    padding: 0; /* Remove extra padding on smaller screens */
+  }
+}
+
+
+.container5{
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  top: 10px;
+  height: 650px;
+  width: 96%;;
+  left: 2%;
+  top: 50px;
+  flex-direction: row;
+  text-align: justify;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.container4{
+  position: relative;
+  display: flex;
+  width: 94%;
+  left: 3%;
+  height: 780px;
+  top: 20px;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius:10px ;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.avespendchart{
+  display: flex;
+  position: relative;
+  left:20px;
+  flex-direction: column;  
+  line-height: 20%;
+  text-align: justify;
+}
+.revenuemarket{
+  display: flex;
+  position: absolute;
+  width: 700px;
+  height: 550px;
+  right: 10px;
+  flex-direction: column;  
+  background-color: #ffffff;
+  line-height: 20%;
+  text-align: justify;
+
+
+}
+
+.bar-chart-description {
+  width: 100%; /* Adjust this as needed */
+  top: 100px;
+  align-content: flex-start;
+  line-height: 1.6;
+}
+
+
+/* Article Section Larger */
+.info-section {
+  flex: 1.3;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.piechart-description {
+  width: 100%; /* Adjust this as needed */
+  top: 100px;
+  align-content: flex-start;
+  line-height: 1.6;
+}
+/* Article Section Larger */
+.info-section2 {
+  flex: 1.3;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart Section Smaller */
+
+
+/* Article Section Larger */
+.info-section3 {
+  flex: 1.3;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Mycontainer {
+  width: 90%;
+  height: 700px;
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-color: #ff6a3e;
+}
+
+
+
+
+.dheading{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius:10px ;
+}
+
+.nbncontainer {
+  
+  display: flex;
+  height: 400px;
+  position: relative;
+  top: 100px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.donutchart1_class{
+
+
+  position: relative;
+  width: 500px;
+  height: 350px;
+  display: flex;
+  left:100px;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius:10px ;
+  text-align: justify;
+}
+
+.donutchart2_class{
+  position: absolute;
+  width: 500px;
+  height: 350px;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius:10px ;
+  text-align: justify;
+}
+.nbncontainer2 {
+  
+  display: flex;
+  top: 50px;
+  height: 400px;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+.mycontainer {
+  
+  display: flex;
+  height: 500px;
+  position: relative;
+  top: 70px;
+}
+.mycontainer > div {
+  width:100%;
+}
+.piechartcontent{
+  
+  display: flex;
+  position: relative;
+  left:10px;
+  flex-direction: column;  
+  align-items: center;
+  
+}
+.barchartcontent{
+  
+  display: flex;
+  position: relative;
+  left: 5%;
+  flex-direction: column;  
+}
+
+
+
+.donutcharts{
+  top: 40px;
+  width: 94%;
+  left: 3%;
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  height: 950px;
+  border-radius:10px ;
+
+}
+
+
+.Netlin{
+  top: 65px;
+  width: 94%;
+  left: 3%;
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  height: 600px;
+  border-radius:10px ;
+}
+
+.netlin-class{
+  top: 50px;
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: row;
+}
+
+.netpar{
+  top:100px ;
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  width: 480px;
+  height: 250px;
+  text-align: justify;
+}
+
+.map{
+  top: 90px;
+  width: 94%;
+  left: 3%;
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  height: 600px;
+  border-radius:10px ;
+}
+
+.map-class{
+  top: 30px;
+  position: relative;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: row;
+  width: 90%;
+  align-items: center;
+  left: 10px;
+}
+
+.footer {
+  top: 50px;
+  background-color: #333; /* Plain color for the footer */
+  color: #fff; /* White text */
+  text-align: center; /* Center the text */
+  padding: 20px 0; /* Padding for spacing */
+  font-family: Arial, sans-serif; /* Simple font */
+  font-size: 14px; /* Font size for readability */
+  margin-top: 100px;
+}
+
+.footer p {
+  margin: 0; /* Remove default margin */
+}
+
+.h2{
+ font-size: 10px;
+ font-family: serif;
+}
+.dheading1{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius:10px ;
+}
+
+.text-container {
+  position: relative;
+  left: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  /* background-color: #ffffff; */
+  padding: 20px;
+  border-radius: 10px;
+  top: 20px;
+  font-family: sans-serif;
+  line-height: 1.6;
+  
+}
+
+.left-section, .right-section {
+  width: 45%; /* Each section takes 45% of the container's width */
+}
+
+.left-section p, .right-section p {
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.text-container p {
+  margin: 0;
+}
+.styled-text {
+  font-weight: bold;
+  font-style: italic;
+  
+}
+.styled-text2 {
+  font-weight: bold;
+  font-style: italic;
+  color: #be565f;
+}
+.styled-text3 {
+  font-weight: bold;
+  font-style: italic;
+  color: #478fbc;
+}
+.styled-text4 {
+  font-weight: bold;
+  font-style: italic;
+  color: #e07a1be4;
+  font-size: 20px;
+}
+.styled-text5 {
+  font-style: italic;
+  color: #e07a1be4;
+  font-size: 20px;
+}
+.bank-transfer {
+  color: #1E90FF; /* Blue color */
+}
+
+.credit-card {
+  color: #FF4500; /* Orange color */
+}
+
+.electronic-check {
+  color: #32CD32; /* Green color */
+}
+
+.mailed-check {
+  color: #e2802b; /* Purple color */
+}
+.electronic-check {
+  color: #32CD32; /* Green color */
+}
+
+.mobile-banking {
+  color: #1E90FF; /* Blue color */
+}
+
+.online-portals {
+  color: #FF4500; /* Orange color */
+}
+
+.digital-wallets {
+  color: #e2802b; /* Purple color */
+}

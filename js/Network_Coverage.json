@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "values": [
+        {"Year": 2016, "3G": 99.3, "4G": 98, "5G": 0},
+        {"Year": 2017, "3G": 99.4, "4G": 99, "5G": 0},
+        {"Year": 2018, "3G": 99.4, "4G": 99.2, "5G": 0},
+        {"Year": 2019, "3G": 99.5, "4G": 99.4, "5G": 7.8},
+        {"Year": 2020, "3G": 99.5, "4G": 99.5, "5G": 23.1},
+        {"Year": 2021, "3G": 99.5, "4G": 99.5, "5G": 39},
+        {"Year": 2022, "3G": 99.5, "4G": 99.3, "5G": 54.9},
+        {"Year": 2023, "3G": 99.5, "4G": 99.7, "5G": 65.6},
+        {"Year": 2024, "3G": 99.6, "4G": 100, "5G": 75.5},
+        {"Year": 2025, "3G": 99.6, "4G": 100, "5G": 86.3},
+        {"Year": 2026, "3G": 99.6, "4G": 100, "5G": 100},
+        {"Year": 2027, "3G": 99.7, "4G": 100, "5G": 100},
+        {"Year": 2028, "3G": 99.7, "4G": 100, "5G": 100}
+      ]
+    },
+    "mark": {
+      "type": "line",
+      "point": true
+    },
+    "width": 600,
+    "height": 400,
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      "y": {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Network Coverage (%)"
+      },
+      "color": {
+      "condition": {
+        "test": "datum['Network Type'] === '5G'",
+        "value": "lightgrey"
+      },
+      "field": "Network Type",
+      "type": "nominal",
+      "scale": {
+        "domain": ["3G", "4G", "5G"],
+        "range": ["blue", "green", "lightgrey"]
+      },
+      "title": "Network Type"
+    },
+      "tooltip": [
+        {"field": "Year", "type": "ordinal", "title": "Year"},
+        {"title": "Network Coverage"},
+        {"field": "3G", "type": "quantitative", "title": "3G Coverage (%)"},
+        {"field": "4G", "type": "quantitative", "title": "4G Coverage (%)"},
+        {"field": "5G", "type": "quantitative", "title": "5G Coverage (%)"}
+
+      ]
+    },
+    "transform": [
+      {
+        "fold": ["3G", "4G", "5G"],
+        "as": ["Network Type", "Value"]
+      }
+    ],
+    "title": "3G, 4G, and 5G Network Coverage from 2016 to 2028"
+  }
+  

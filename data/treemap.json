@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "values": [
+        {"category": "A", "subCategory": "A1", "value": 10},
+        {"category": "A", "subCategory": "A2", "value": 20},
+        {"category": "B", "subCategory": "B1", "value": 30},
+        {"category": "B", "subCategory": "B2", "value": 40},
+        {"category": "C", "subCategory": "C1", "value": 50},
+        {"category": "C", "subCategory": "C2", "value": 60}
+      ]
+    },
+    "mark": {
+      "type": "rect"
+    },
+    "encoding": {
+      "x": {
+        "field": "category", 
+        "type": "nominal",
+        "axis": {"title": "Category"}
+      },
+      "y": {
+        "field": "subCategory",
+        "type": "nominal",
+        "axis": {"title": "Subcategory"}
+      },
+      "size": {
+        "field": "value", 
+        "type": "quantitative",
+        "legend": {"title": "Value"}
+      },
+      "color": {
+        "field": "value",
+        "type": "quantitative"
+      },
+      "tooltip": [
+        {"field": "category", "type": "nominal", "title": "Category"},
+        {"field": "subCategory", "type": "nominal", "title": "Subcategory"},
+        {"field": "value", "type": "quantitative", "title": "Value"}
+      ]
+    }
+  }
+  
