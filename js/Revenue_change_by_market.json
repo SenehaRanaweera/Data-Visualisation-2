@@ -1,0 +1,22 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": { "url": "data/revenue.csv"  },
+            "mark": {
+            "type": "line",
+            "point": {
+              "filled": false,
+              "fill": "white"
+            }
+          },
+            "width": 600,
+            "height": 400,
+            "encoding": {
+                "x": { "field": "Year", "type": "ordinal", "title": "Year" },
+                "y": { "field": "Revenue change by market in percent", "type": "quantitative", "title": "in percent" },
+                "color": { "field": "Data Type", "type": "nominal" },
+            "tooltip": [
+               {"field": "Year", "type": "ordinal", "title": "Quarter"},
+               {"field": "Data Type", "type": "nominal", "title": "Data Type"}
+             ]  
+            },
+            "title": "Revenue Change By Market"
+          }

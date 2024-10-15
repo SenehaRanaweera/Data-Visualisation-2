@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "data/Complaints_1.csv" },
+  "params": [
+    {
+      "name": "Mode_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Internet", "Mobile", "Landline", "Multiple", "Property", "Total"],
+        "labels": ["Show All", "Internet", "Mobile", "Landline", "Multiple", "Property", "Total"],
+        "name": "Select the Mode: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "fold": ["Internet", "Landline", "Mobile", "Multiple", "Property", "Total"],
+      "as": ["Category", "Value"]
+    },
+    {
+      "filter": "Mode_selection == null || datum.Category == Mode_selection"
+    }
+  ],
+  "mark": { "type": "line", "point": true },
+  "width": 600,
+  "height": 400,
+  "encoding": {
+    "x": { "field": "Quarter", "type": "ordinal", "title": "Quarter" },
+    "y": { "field": "Value", "type": "quantitative", "title": "Count" },
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "title": "Telecommunication Mode"
+    },
+    "tooltip": [
+      { "field": "Quarter", "type": "ordinal", "title": "Quarter" },
+      { "field": "Category", "type": "nominal", "title": "Telecommunication Mode" },
+      { "field": "Value", "type": "quantitative", "title": "Number of Complaints", "format": "," }
+    ]
+  },
+  "config": {
+    "view": { "stroke": "transparent" },
+    "axis": { "grid": true }
+  },
+  "title": "Quarterly Data for Different Categories"
+}

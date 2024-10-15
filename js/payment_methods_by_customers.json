@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    
+    "description": "Pie Chart with percentage_tooltip",
+    "data": {
+      "values": [
+      {"payment_method": "Bank transfer", "records": 1544, "percentage": 21.92},
+      {"payment_method": "Credit Card", "records": 1522, "percentage": 21.61},
+      {"payment_method": "Electronic check", "records": 2365, "percentage": 33.58},
+      {"payment_method": "Mailed check", "records": 1612, "percentage": 22.89}
+    ]
+    },
+    "mark": {"type": "arc", "tooltip": true},
+    "encoding": {
+      "theta": {"field": "records", "type": "quantitative", "stack": "normalize"},
+      "color": {"field": "payment_method", "type": "nominal","scale": {
+        "scheme": "purplebluegreen"
+      }},
+      "tooltip": [
+        {"field": "records", "type": "quantitative", "format": ","},
+        {"field": "payment_method", "type": "nominal", "title": "Payment Method"}
+        ]
+    }
+    
+  }
+  

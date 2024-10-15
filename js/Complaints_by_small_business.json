@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 400,
+    "description": "Grouped Bar Chart comparing complaints by category across two years.",
+    "data": {
+      "values": [
+        {"Category": "No or delayed action by provider", "Year": "2022-23", "Complaints": 4868,"percentage_total": 64.2, "change_percentage": -12.6},
+        {"Category": "No or delayed action by provider", "Year": "2023-24", "Complaints": 4254,"percentage_total": 64.2, "change_percentage": -12.6},
+        {"Category": "Service and equipment fees", "Year": "2022-23", "Complaints": 2469,"percentage_total": 29.4, "change_percentage": -21.1},
+        {"Category": "Service and equipment fees", "Year": "2023-24", "Complaints": 1949,"percentage_total": 29.4, "change_percentage": -21.1},
+        {"Category": "Business Loss", "Year": "2022-23", "Complaints": 1096,"percentage_total": 16.1, "change_percentage": -2.9},
+        {"Category": "Business Loss", "Year": "2023-24", "Complaints": 1064,"percentage_total": 16.1, "change_percentage": -2.9},
+        {"Category": "No phone or internet Testing", "Year": "2022-23", "Complaints": 1146,"percentage_total": 15.9, "change_percentage": -8.1},
+        {"Category": "No phone or internet Testing", "Year": "2023-24", "Complaints": 1053,"percentage_total": 15.9, "change_percentage": -8.1},
+        {"Category": "Inadequate fault testing", "Year": "2022-23", "Complaints": 498,"percentage_total": 10.1, "change_percentage": -33.9},
+        {"Category": "Inadequate fault testing", "Year": "2023-24", "Complaints": 667,"percentage_total": 10.1, "change_percentage": -33.9},
+        {"Category": "Intermittent service or drop outs", "Year": "2022-23", "Complaints": 717,"percentage_total": 8.5, "change_percentage": -21.3},
+        {"Category": "Intermittent service or drop outs", "Year": "2023-24", "Complaints": 564,"percentage_total": 8.5, "change_percentage": -21.3},
+        {"Category": "Delay establishing a service", "Year": "2022-23", "Complaints": 661,"percentage_total": 8.4, "change_percentage": -15.4},
+        {"Category": "Delay establishing a service", "Year": "2023-24", "Complaints": 559,"percentage_total": 8.4, "change_percentage": -15.4},
+        {"Category": "Failure to cancel a service", "Year": "2022-23", "Complaints": 606,"percentage_total": 8.2, "change_percentage": -10.4},
+        {"Category": "Failure to cancel a service", "Year": "2023-24", "Complaints": 543,"percentage_total": 8.2, "change_percentage": -10.4},
+        {"Category": "Resolution agreed but not met", "Year": "2022-23", "Complaints": 795,"percentage_total": 7.8, "change_percentage": -35.0},
+        {"Category": "Resolution agreed but not met", "Year": "2023-24", "Complaints": 517,"percentage_total": 7.8, "change_percentage": -35.0},
+        {"Category": "Service problrm with add-on feature(email,call waiting, alarm etc failure)", "Year": "2022-23", "Complaints": 355,"percentage_total": 5.7, "change_percentage": -6.2},
+        {"Category": "Service problrm with add-on feature(email,call waiting, alarm etc failure)", "Year": "2022-23", "Complaints": 377,"percentage_total": 5.7, "change_percentage": -6.2}
+        
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Category", "type": "nominal"},
+      "y": {"field": "Complaints", "type": "quantitative"},
+      "xOffset": {"field": "Year"},
+      "color": {"field": "Year", "type": "nominal", "scale": {
+        "range": ["#43a2ca", "#bae4bc"]  
+      }
+     },
+     "tooltip": [
+        {"field": "Year", "type": "ordinal", "title": "Year"},
+        {"field": "Complaints", "type": "quantitative", "title": "Complaints", "format": ","},
+        {"field": "percentage_total", "type": "quantitative", "format": ".1f", "title": "Percentage of Total"},
+        {"field": "change_percentage", "type": "quantitative", "format": ".1f", "title": "Change from 2022-23"}
+      ]
+    }
+  }
+  
